@@ -99,7 +99,7 @@ We know that 0, 1, and 2 must be on a different cube from an occurrence of all o
 
 ### Door to Offer
 
-Notation wise, let answer cases be determined by the guard and door we are at: <truth, job offer>/<truth, exit>/<lie, offer>/<lie,exit>. Simple questions include "Is this the job offer?" (T/F/F/T) or "Are you the liar?" (F/F/T/T).
+Notation wise, let answer cases be determined by the guard and door we are at: <truth, job offer>/<truth, exit>/<lie, offer>/<lie,exit>. Simple questions include "Is this the job offer?" (T/F/F/T) or "Are you the liar?" (F/F/F/F).
 
 We need to identify out of four cases - which door we are at as well as which one of the two guards we are talking to. Since we only get one bit of information from the question, we must direct this question in order to determine which door we are at, which is a truth table of T/F/T/F, where T is stay and F is switch.
 
