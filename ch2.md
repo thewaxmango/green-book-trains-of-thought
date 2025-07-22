@@ -41,7 +41,7 @@ Optimally, we want D to cross 1 time, since D bounds every trip. Then, with the 
 
 The other two cases are 5/1/1/1 and 3/3/1/1, the first of which we already explored and is not possible to overlap C and D. We try 3/3/1/1 with saving 5 on overlapping C and D, but we note that C+D can not be the first or third crossing as otherwise one of them must make a return trip. Thus, the first and last trip must be A+B, and due to parity, both of them must make exactly one return trip, totaling 2 (A and B) + 1 (A) + 10 (C and D) + 2 (B) + 2(A+B) = **17**.
 
-### Birthday problem
+### Birthday Problem
 
 We know from the reader POV's first statement that the month has at least one possible date, and that all the dates in that month are also ambiguous - otherwise they wouldn't be able to definitively say that C doesn't know. This reduces our options to March and September, which C is then able to derive the answer from. The reader then knows that the date can not be 5, as it would still be ambiguous to C. Finally, the reader is able to derive the answer, meaning that once 5s are ruled out, the date must be unique, so the answer is **Sep 1**.
 
@@ -75,3 +75,14 @@ Suppose that WLOG we compare CFG/DHI. If balanced, we know the outlier is in A-h
 
 Very easy. Consider the prime factorization of 100! = 2^a \* 3^b \* 5^c... We know that the number of trailing zeroes is min(a, c). Furthermore, we know that a > c for any factorial above 1!, as there are at least two multiples of 2 for every multiple of 5, and higher powers are even more biased. Thus, we identify how many powers of 5 there are in 100! -> this is 100 // 5 + 100 // 25 + 100 // 125... = 20 + 4 + 0... = **24**.
 
+### Horse Race
+
+We want to figure out at way to eliminate 22 of the 25 horses. Naively, we can eliminate at least 2 horses in every race, bringing our upper bound down to 11. We also can't decide on what the fastest horses are without comparing all horses at least once, bringing our lower bound to 6 (as comparing exactly once means no cross-comparing). Consider the best case scenario where we know A>B>C>D>E, F>G>H>I>J, etc. Then, we learn C>F>K>P>U, giving us the information we need. However, this is in fact the only way to determine the best in 6, and relies on us getting lucky where we get the three fastest A>B>C... and hit the 1/4 of comparing C with all the other race winners.
+
+What are our ways to guarantee elimination of more per race? Suppose we know A>F, B>G, C>H, D>I, and E>J. Then, when we learn A>B>C>D>E, we know that D, E, H, I, and J are eliminated. How about we expand on this idea?
+
+Let us consider A>B>C>D>E, F>G>H>I>J, etc. again, but this time choose to compare all the race winners. Then, we learn WLOG A>F>K>P>U, meaning that our candidates are reduced to A, B, C, F, G, and K. Furthermore, we know A is the fastest. Finally, we race B, C, F, G and K to find the next 2, taking 7 races. 
+
+### Infinite Sequence
+
+We want to solve the classic x^(x...)^ = 2 problem. Then, log_x(x^(x...)^) = log_x(2) ->  x^(x...)^ = log_x(2) -> 2 = log_x(2) -> x^2 = 2. The solutions to this are x = +-sqrt(2), but the negative solution can not be a log base, so **x = sqrt(2)**.
