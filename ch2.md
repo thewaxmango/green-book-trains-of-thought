@@ -104,3 +104,9 @@ Notation wise, let answer cases be determined by the guard and door we are at: <
 We need to identify out of four cases - which door we are at as well as which one of the two guards we are talking to. Since we only get one bit of information from the question, we must direct this question in order to determine which door we are at, which is a truth table of T/F/T/F, where T is stay and F is switch.
 
 So how do we fix the lying guard problem? What if we try some sort of error correction by combining the answers to the two questions? We can ask a position agnostic question like **"Is the truth telling guard in front of the job offer?"**, giving us T/F/T/F, which is exactly what we want.
+
+### Message delivery
+
+Obviously, we can not send a message to a person with a locked box if they do not own the lock. Thus, we need to somehow obtain the other person's lock without losing it. So, how do we get their lock on the box with our message inside? They can not send their padlock to us unlocked, or their lock locked without the message inside. 
+
+Let us formulate this as a sequence of actions for persons A and B: A inserts message, A locks, A unlocks, Pass box, B locks, B unlocks, B receives message. A inserts message must occur first, as no locks can be on. Then, A locks, as Pass box will just lose the message. Then, all A can do is Pass box. B can not unlock or receive message. Passing Box again is useless, so B locks and Pass box is the only logical solution. This is followed by A unlock, Pass box, B unlock, and B receives message. Sequence: **insert message, A locks, send box to B, B locks, send box to A, A unlocks, send box to B, B unlocks, receive message**.
