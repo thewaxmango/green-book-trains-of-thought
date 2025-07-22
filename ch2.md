@@ -40,3 +40,12 @@ Optimally, we want D to cross 1 time, since D bounds every trip. Then, with the 
 10 (D and C) + 5 (C) + 5 (C and A) + 1(A) + 2(B and A) = 23, which is greater the cost of 5/1/1/1 (A/B/B/C) before considering savings.
 
 The other two cases are 5/1/1/1 and 3/3/1/1, the first of which we already explored and is not possible to overlap C and D. We try 3/3/1/1 with saving 5 on overlapping C and D, but we note that C+D can not be the first or third crossing as otherwise one of them must make a return trip. Thus, the first and last trip must be A+B, and due to parity, both of them must make exactly one return trip, totaling 2 (A and B) + 1 (A) + 10 (C and D) + 2 (B) + 2(A+B) = **17**.
+
+### Birthday problem
+
+We know from the reader POV's first statement that the month has at least one possible date, and that all the dates in that month are also ambiguous - otherwise they wouldn't be able to definitively say that C doesn't know. This reduces our options to March and September, which C is then able to derive the answer from. The reader then knows that the date can not be 5, as it would still be ambiguous to C. Finally, the reader is able to derive the answer, meaning that once 5s are ruled out, the date must be unique, so the answer is **Sep 1**.
+
+### Card Game
+
+Notice that the casino wins on ties, and the only way you win is if you have more. However, consider the only way cards are discarded - in pairs of black and red. Thus, ties are the only possible outcome, so the expected value is **$0**.
+
