@@ -26,6 +26,8 @@ At 3 tigers, a tiger can eat as then there would be 2 tigers left, and neither w
 
 We extrapolate that on odd tigers, a tiger will eat the sheep, and vice versa on even tigers. Therefore, when there are 100 tigers, **the sheep will not be eaten**.
 
+## 2.2 Logic reasoning
+
 ### River Crossing
 To get to the other side with one torch, the torch must cross back and forth. Two people cross, then at least one must return. In total, there are 5 crossings (8 people total), as 2 across -> 1 back -> 2 across -> 1 back -> 2 across nets all four people successfully crossing the bridge. Furthermore, each individual must cross an odd number of times in total.
 
