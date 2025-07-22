@@ -49,3 +49,11 @@ We know from the reader POV's first statement that the month has at least one po
 
 Notice that the casino wins on ties, and the only way you win is if you have more. However, consider the only way cards are discarded - in pairs of black and red. Thus, ties are the only possible outcome, so the expected value is **$0**.
 
+### Burning Ropes
+
+Burning a rope from one end will not help us at all, since it takes an hour to burn through and we have no reference in the middle. If we burn both ends at the same time, we guaranteed measure half an hour - but that is not good enough. How can we measure 15 minutes?
+
+First, we notice that the reason we can measure 30 minutes is because the rope is burning at 2 points, therefore consuming the rope at twice the speed. What if we ensure that a rope is constantly burning at 4 points? Suppose we light the rope at the center and the two ends (center is 2 points as the fire burns both ways). Then, when one pair of flames meet (killing 2 points), simply light the median of the unburnt segment that the other two flames are moving towards. Repeat until the rope is gone, measuring an additional 15 minutes.
+
+Thus, in any order, perform the 30 minute burn and the 15 minute burn consecutively.
+
