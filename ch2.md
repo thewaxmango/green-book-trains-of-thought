@@ -57,3 +57,17 @@ First, we notice that the reason we can measure 30 minutes is because the rope i
 
 Thus, in any order, perform the 30 minute burn and the 15 minute burn consecutively.
 
+### Defective Ball
+
+Let us consider this problem from a data standpoint. There are 24 cases: each of the 12 balls (A-L) being light or heavy. In order to determine the solution in 3 measurements, we have to rule out at least 22 of the cases.
+
+Suppose we start by measuring A-D/E-H. We end up with two cases: balanced or unbalanced. Both cases result in 16 eliminated cases, or 2/3 of 24.
+
+If balanced, we know that the outlier is in I-L. Then, measure I/J. If balanced, the outlier is in K/L, and I/J are normal. We can compare one of K/L with one of I/J. If balanced, the non-compared one of K/L is outlier and vice versa.
+
+WLOG, suppose that A-D is heavier. Then, we know that the result is either one of A-D being heavier or one of E-H being lighter. We want to ensure that we can find the results in 2 comparisons, and we must eliminate 7 cases. 
+
+What's the largest number of cases we can eliminate in the final comparison (given our extra balls that we know to be normal)? We could for example have A/B/E left, compare A/B, and know the answer (as we know A-D can only be heavy). This eliminates 2 cases. Then, we must eliminate at least 5 cases in the next comparison. This is less than 2/3 of 8, which gives us hope.
+
+Suppose that WLOG we compare CFG/DHI. If balanced, we know the outlier is in A-heavy/B-heavy/E-light. If left is heavier, we know the outlier must be C-heavy or H-light, which is easy to identify. If the right is heavier, we know the outlier must be D-heavy/F-light/G-light, which we also previously know we can identify. For the sake of brevity, **the complete solution will be omitted**.
+
