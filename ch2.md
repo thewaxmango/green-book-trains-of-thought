@@ -86,3 +86,21 @@ Let us consider A>B>C>D>E, F>G>H>I>J, etc. again, but this time choose to compar
 ### Infinite Sequence
 
 We want to solve the classic x^(x...)^ = 2 problem. Then, log_x(x^(x...)^) = log_x(2) ->  x^(x...)^ = log_x(2) -> 2 = log_x(2) -> x^2 = 2. The solutions to this are x = +-sqrt(2), but the negative solution can not be a log base, so **x = sqrt(2)**.
+
+## 2.3 Thinking out of the box
+
+### Box Packing
+
+Let us consider 2x2x2 checkerboard parity. Each 1x1x4 occupies two minoes of each parity, meaning the total occupancy of all 53 blocks is 106 of each parity. However, in a 6x6x6, there are 14*8=112 of one parity and 13*8=104 of the other, meaning this packing is not possible.
+
+### Calendar Cubes
+
+We know that 0, 1, and 2 must be on a different cube from an occurrence of all other digits (except 0-0). These numbers must occur on both dice. 30 and 31 are covered by 03 and 01. Then, there are only 6 slots left for 7 digits, meaning the problem pulls some BS like flipping the 6 for a 9. Then, distribute 3-8 between the 2 dice arbitrarily.
+
+### Door to Offer
+
+Notation wise, let answer cases be determined by the guard and door we are at: <truth, job offer>/<truth, exit>/<lie, offer>/<lie,exit>. Simple questions include "Is this the job offer?" (T/F/F/T) or "Are you the liar?" (F/F/T/T).
+
+We need to identify out of four cases - which door we are at as well as which one of the two guards we are talking to. Since we only get one bit of information from the question, we must direct this question in order to determine which door we are at, which is a truth table of T/F/T/F, where T is stay and F is switch.
+
+So how do we fix the lying guard problem? What if we try some sort of error correction by combining the answers to the two questions? We can ask a position agnostic question like **"Is the truth telling guard in front of the job offer?"**, giving us T/F/T/F, which is exactly what we want.
