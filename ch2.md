@@ -71,3 +71,7 @@ What's the largest number of cases we can eliminate in the final comparison (giv
 
 Suppose that WLOG we compare CFG/DHI. If balanced, we know the outlier is in A-heavy/B-heavy/E-light. If left is heavier, we know the outlier must be C-heavy or H-light, which is easy to identify. If the right is heavier, we know the outlier must be D-heavy/F-light/G-light, which we also previously know we can identify. For the sake of brevity, **the complete solution will be omitted**.
 
+### Trailing Zeros
+
+Very easy. Consider the prime factorization of 100! = 2^a \* 3^b \* 5^c... We know that the number of trailing zeroes is min(a, c). Furthermore, we know that a > c for any factorial above 1!, as there are at least two multiples of 2 for every multiple of 5, and higher powers are even more biased. Thus, we identify how many powers of 5 there are in 100! -> this is 100 // 5 + 100 // 25 + 100 // 125... = 20 + 4 + 0... = **24**.
+
