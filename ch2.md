@@ -230,3 +230,29 @@ Division rules say divisible by 9 if the sum of the digits is divisible by 9. We
 
 With the yes/no nature and state changes, we should immediately try to find an invariant. Easiest one is if red = 0, green = 1, blue = 2, and invariant is sum mod 3. If red meets green, 0 + 1 = 2 + 2 mod 3. If red meets blue, 0 + 2 = 1 + 1 mod 3. Same with G/B. The current state is 15 + 2 * 17 = 1 mod 3. When all 45 chameleons are the same color, their sum is 0 mod 3. Thus, this is **impossible**.
 
+## 2.8 Math induction
+
+### Coin Split Problem
+
+If the given expression is the same no matter how some *t* is split, then our work is easy. Let us suppose this is the case, and let the expression be F(t). F(1) = 0.
+
+Suppose you have a pile of 2 stones. Then, F(2) is obviously 1. What about 3? Then, F(3) = F(2) + F(1) + 1\*2 = 1 + 0 + 2 = 3. What about 4? Then, F(4) = F(3) + F(1) + 1\*3 = 3 + 0 + 3 = 6, F(4) = F(2) + F(2) + 4 = 6...
+
+We notice this pattern, and suppose that *F(t) = t(t-1)/2*. We already have base cases, and we just want to show that for all integers *x<t*, *F(t) = F(x) + F(t-x) + x(t-x)* holds. Expanding this out, we find that this is true, showing by induction that *F(x+y) = xy + x1x2 + y1y2 + ...* is constant given x and y.
+
+### Chocolate Bar Problem
+
+Consider a chocolate bar with dimensions *(n, m)*, let the number of breaks needed be *F(n, m) = F(m, n)*. Let us examine some small cases. 
+
+*F(1, 1) = 0. F(1, 2) = 1. F(1, 3) = 2. F(2, 2) = 3. F(3, 2) = 1 + F(1, 2) + F(2, 2) = 1 + F(1, 3) + F(1, 3) = 5.* We surmise that *F(n, m) = nm-1*, and wish to prove this inductively. 
+
+Suppose that we have *(n, m)* and break it into *(n, a); (n, m-a)*. Then, *F(n, m) = F(n, a) + F(n, m-a) + 1 = na - 1 + n(m-a) - 1 + 1 = nm - 1*. QED.
+
+### Race Track
+
+Let these cans be labeled 0 through N-1 in order and assume modulo N. Let amount of gas be *g_i* and distance to next be *d_i*. Furthermore, let us consider some simple cases.
+
+Case N=1: trivial, only can must contain gas for the whole way. Case N=2: there must be at least one can that gets us to the next, and then fill to the end. 
+
+Assume N=M-1 is true. Case N=M: consider all pairs of consecutive cans *i, i+1*. We want *g_i >= d_i* and *g_i+1 + g_i >= d_i+1 + d_i*. If we then consider these two cans as merged, we return to the N=M-1 case, which we have already assumed. We just need to prove that there exists some pair like this. The good news is, by simple inequalities, we know that there must be at least some *i* satisfying *g_i > d_i*. We can then merge can *i* with can *i+1*, as we are guaranteed to get both while passing it, reducing us to the M-1 case, which is true.
+
