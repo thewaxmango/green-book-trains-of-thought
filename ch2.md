@@ -199,3 +199,13 @@ Then, 5 edges is the only case. It must be connected, as a lone node can form an
 When we add the 6th node, it must connect to at least 3 nodes - otherwise, there exists a diagonal of the ring such that with the 6th node, it forms a empty triangle. However, with three edges, by pigeonhole it once again must form a complete triangle. Thus, this is impossible, so a graph with 6 nodes must contain either an empty triangle or a complete one.
 
 *Upon review:* The solution is a lot simpler.
+
+### Ants on a Square
+
+Recall that we want to somehow determine that there does not exist a 1/7 radius circle with three ants. By pigeonhole, for 51 ants, we want 25 regions to refute. Splitting a 1 width/height square into 25, we get 1/5 width/height sections, which has a diagonal of less than the diameter of the glass. Furthermore, at least one section has three ants, so the glass can cover this section.
+
+### Counterfeit Coins II
+
+Naively, we can weigh 5 times to find the solution. We want to do better than this. First consideration is: what happens if we weigh coins from two bags with same weight? Then, we know the answer. What about different weights? Well, if we take different amounts from each bag, we can tell any pair of weights apart. What is a case (with more bags) that we must avoid? First, we don't want 9s and 11s to cancel each other out. There may be some other ambiguity too, but it's hard to identify at first glance. 
+
+Suppose we take 1/3/9/27/81 coins respectively, and find the difference from 121. This allows us to identify the weight of each coin in each weighing, since no matter what, the first 40 coins (delta between -40 and 40) can't muddle the difference made by the group of 81 (+-81 or 0), and same to the left.
