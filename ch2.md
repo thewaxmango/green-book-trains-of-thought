@@ -183,3 +183,17 @@ This is super basic - worst case you grab one of each color, then on the **4**th
 
 Everyone could have shaken hands with 0-25 people. However, 25 and 0 are mutually exclusive (and 0 is not possible, since you shake hands with everyone), so the space is reduced to 25 choices, which for 26 people **must indicate sharing of at least one number**.
 
+
+### Have We Met Before?
+
+This indicates that in a graph containing six nodes, there must be a subset of three nodes that is complete or empty. We can prove that this is true by attempting to construct a graph with neither, and show that it is impossible. We may try smaller cases first just to indicate get a sense of how it works.
+
+First, we prove that the only way to construct a graph with 5 nodes that doesn't have either a complete or empty triplet is a ring. Let us first consider the number of edges necessary. 
+
+Suppose there exist <=4 edges. Then, either at least one node is disconnected or the graph is a tree. If one node is disconnected, by the pigeonhole principle we may select another pair of nodes that do not share an edge and form an empty triangle. If the graph is a tree, then there must exist either three leaves (which can not share edges, or else the tree would have size 2) from which we can draw an empty triangle, or is a line, in which case we select the ends and the middle to form an empty triangle. 
+
+Suppose there exist >=6 edges. Then, by pigeonhole principle, there must exist some node with at least three outgoing edges. Furthermore, by pigeonhole principle, at least 2 of those neighbors must share an edge, forming a complete triangle.
+
+Then, 5 edges is the only case. It must be connected, as a lone node can form an empty triangle by pigeonhole principle (5/6 to connect 4 nodes). It can not have a loop of 3 (trivial) or a loop of 4 (the extra node can form an empty triangle with the diagonal of a square it is not adjacent to a node of). Thus, the graph of 5 nodes must be a ring. 
+
+When we add the 6th node, it must connect to at least 3 nodes - otherwise, there exists a diagonal of the ring such that with the 6th node, it forms a empty triangle. However, with three edges, by pigeonhole it once again must form a complete triangle. Thus, this is impossible, so a graph with 6 nodes must contain either an empty triangle or a complete one.
