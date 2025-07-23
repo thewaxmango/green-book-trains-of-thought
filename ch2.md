@@ -121,3 +121,9 @@ Naively, just try each one in turn and take 4 turns. What if we flip multiple? F
 
 *On review*: it turns out that the answer involves touching the lightbulb and gaining two bits of information on one entry to the room. Should have seen it coming...
 
+### Quant salary
+
+We want to figure out a way for everyone to add up their salaries without knowing any other person's salary. There are two possible ways to do this: first is that a person only reveals partial information about their salary, second is that a person reveals some encrypted version of their salary. I can not think of a good way to do this without some trusted third party.
+
+Criticisms of the given answer: If two quants (e.g. 3 and 5) share their numbers, they can determine what 4's salary is.
+
