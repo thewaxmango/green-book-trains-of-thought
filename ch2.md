@@ -105,8 +105,19 @@ We need to identify out of four cases - which door we are at as well as which on
 
 So how do we fix the lying guard problem? What if we try some sort of error correction by combining the answers to the two questions? We can ask a position agnostic question like **"Is the truth telling guard in front of the job offer?"**, giving us T/F/T/F, which is exactly what we want.
 
-### Message delivery
+### Message Delivery
 
 Obviously, we can not send a message to a person with a locked box if they do not own the lock. Thus, we need to somehow obtain the other person's lock without losing it. So, how do we get their lock on the box with our message inside? They can not send their padlock to us unlocked, or their lock locked without the message inside. 
 
 Let us formulate this as a sequence of actions for persons A and B: A inserts message, A locks, A unlocks, Pass box, B locks, B unlocks, B receives message. A inserts message must occur first, as no locks can be on. Then, A locks, as Pass box will just lose the message. Then, all A can do is Pass box. B can not unlock or receive message. Passing Box again is useless, so B locks and Pass box is the only logical solution. This is followed by A unlock, Pass box, B unlock, and B receives message. Sequence: **insert message, A locks, send box to B, B locks, send box to A, A unlocks, send box to B, B unlocks, receive message**.
+
+### Last Ball
+
+Yet another parity problem. We usually identify this sort of problem by the binary (or n-ary) nature and state changes. Let blue be 0, red be 1, and the invariant be the sum of the balls mod 2. Note that this invariant exists because removing two equal balls (sum 0 or 2) and adding a blue (0) maintains the invariant. Removing two different balls (sum 1) and adding a red (1) maintains the invariant. **With 20 blue and 14 red, last ball will be blue** as the parity is 0. **With 20 blue and 13 red, last ball will be red**.
+
+### Light Switches
+
+Naively, just try each one in turn and take 4 turns. What if we flip multiple? Flipping 2 rules out half the options, and flipping one of the 2 remaining possibilities rules out another. Thus, **2 turns**.
+
+*On review*: it turns out that the answer involves touching the lightbulb and gaining two bits of information on one entry to the room. Should have seen it coming...
+
