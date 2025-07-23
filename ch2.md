@@ -1,5 +1,3 @@
-# Chapter 2
-
 ## 2.1 Brain teasers
 
 ### Screwy Pirates
