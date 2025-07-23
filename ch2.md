@@ -172,3 +172,14 @@ We must determine a way to weigh only once and differentiate every bag. This is 
 We only have two balls, and want to find the floor. Suppose the first toss is at floor M_0, and it breaks. Then, we must start throwing from 1 upwards to M_0 to ensure we don't break before the solution is found, which has a worst case of M_0 throws.
 
 Suppose the first throw doesn't break. Then, we choose some M_1>M_0 to try, and if it breaks, takes M_1-M_0+1 throws. In order to minimize worst case throws, let M_1-M_0+1=M_0 -> M_1 = 2M_0-1. If doesn't break, continue with M_2=3M_0-2-1... We want to ensure that M_(M_0)- M(M_0-1) + M_0 = M_0 and that M_(M_0) >= 100, implying that M_(M_0) = M(M_0-1) (which is true by examining the summations). We know M_(M_0) = (M_0 + 1)M_0 - (1 + 2 + ... + M_0) = (M_0 + 1)M_0/2, for which the minimum solution is M_0=14.
+
+## 2.6 The Pigeon Hole Principle
+
+### Matching Socks
+
+This is super basic - worst case you grab one of each color, then on the **4**th, you get a pair with one of the first three.
+
+### Handshakes
+
+Everyone could have shaken hands with 0-25 people. However, 25 and 0 are mutually exclusive (and 0 is not possible, since you shake hands with everyone), so the space is reduced to 25 choices, which for 26 people **must indicate sharing of at least one number**.
+
