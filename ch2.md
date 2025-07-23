@@ -141,3 +141,15 @@ Note that all bags are mislabeled. What do we know from that? Well, the bag labe
 
 We need some way to ensure that everyone has visited the room, but we can not encode the number of distinct visitors in the one bit of information. However, we can encode whether a distinct person has visited - so what if we have one wise man use their brain as a counter, and everyone only flips upside down if it's their first time getting a chance to flip the cup from right side up to upside down? Then, when the counter visits, he sees if a new person has visited the room, and flips right side up. Once 49 flips have been counted, the counter declares that everyone has visited the room.
 
+## Series summation
+
+### Clock Pieces
+
+Three pieces, equal sums. We know the numbers on the clock sum to 12*13/2 = 78. Then, each part must sum to 26. We also know that at least two pieces must contain contiguous numbers, as it is impossible to break a clock into only 3 pieces otherwise. Consecutive sums to 26: **11-12-1-2, 5-6-7-8**. Last piece is **9-10-3-4**.
+
+### Missing Integers
+
+There is no way to solve this in better than *O(n)* time, so I will assume the solution wants *O(1)* additional space. Let the missing numbers be *a, b*. Since we are operating in constant space, we must accumulate the numbers somehow. A system of two equations allows us to identify two variables from two results. 
+
+Let us take the sum of all the numbers = *5050-a-b*. This allows us to determine *c=a+b*. Let us take the product and identify *p=ab*. Then, *c^2^-4p=(a-b)^2^=K^2*, which gives us *K=a-b* or *K=b-a*. Solving gives us two pairs which are identical, but reversed - this is the solution
+
