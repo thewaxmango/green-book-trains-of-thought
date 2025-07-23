@@ -256,3 +256,13 @@ Case N=1: trivial, only can must contain gas for the whole way. Case N=2: there 
 
 Assume N=M-1 is true. Case N=M: consider all pairs of consecutive cans *i, i+1*. We want *g_i >= d_i* and *g_i+1 + g_i >= d_i+1 + d_i*. If we then consider these two cans as merged, we return to the N=M-1 case, which we have already assumed. We just need to prove that there exists some pair like this. The good news is, by simple inequalities, we know that there must be at least some *i* satisfying *g_i > d_i*. We can then merge can *i* with can *i+1*, as we are guaranteed to get both while passing it, reducing us to the M-1 case, which is true.
 
+## Proof by contradiction
+
+### Irrational Number
+
+We've all seen this problem 100 times. Suppose *sqrt(2) = a/b* where a and b are coprime integers. Then, *2b^2^ = a^2^*. This implies *a* is divisible by 2, which would then imply *b* is divisible by 2, which violates our coprime assumption.
+
+### Rainbow Hats
+
+I feel like this is more of a pigeonhole type of problem. Let each color be a number 0-6. Let the state be the sum mod 7. There are only seven possibilities for this sum. Each prisoner is assigned a number to pretend is the state, and derives their potential hat color from that value and what he sees. One of them must be right.
+
