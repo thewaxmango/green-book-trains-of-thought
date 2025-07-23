@@ -127,3 +127,17 @@ We want to figure out a way for everyone to add up their salaries without knowin
 
 Criticisms of the given answer: If two quants (e.g. 3 and 5) share their numbers, they can determine what 4's salary is.
 
+## 2.4 Application of symmetry
+
+### Coin Piles
+
+Let's consider what happens when we choose to flip some coins. Suppose there are *h* heads of 1000 coins, and we flip some *m* of them. Suppose there are *i <= m* heads in those. Then, the resulting number of heads is *h-i+(m-i) = h+m-2i*, with *h-i* in pile 1 and *m-i* in pile 2. How do we make them equal? Well, easy. Set *h=m*, or in English, **arbitrarily separate out 20 coins and flip them**.
+
+### Mislabeled Bags
+
+Note that all bags are mislabeled. What do we know from that? Well, the bag labeled as the mixed bag must either be apples or oranges. Retrieve one fruit to confirm which, WLOG say it is apples. Then, the other two bags are labeled apples and oranges. We know the bag labeled oranges is not oranges and it is not apples (as that is the bag labeled mixed). Then, that bag must be the mixed bag, and one labeled apples is oranges.
+
+### Wise Men
+
+We need some way to ensure that everyone has visited the room, but we can not encode the number of distinct visitors in the one bit of information. However, we can encode whether a distinct person has visited - so what if we have one wise man use their brain as a counter, and everyone only flips upside down if it's their first time getting a chance to flip the cup from right side up to upside down? Then, when the counter visits, he sees if a new person has visited the room, and flips right side up. Once 49 flips have been counted, the counter declares that everyone has visited the room.
+
