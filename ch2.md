@@ -209,3 +209,24 @@ Recall that we want to somehow determine that there does not exist a 1/7 radius 
 Naively, we can weigh 5 times to find the solution. We want to do better than this. First consideration is: what happens if we weigh coins from two bags with same weight? Then, we know the answer. What about different weights? Well, if we take different amounts from each bag, we can tell any pair of weights apart. What is a case (with more bags) that we must avoid? First, we don't want 9s and 11s to cancel each other out. There may be some other ambiguity too, but it's hard to identify at first glance. 
 
 Suppose we take 1/3/9/27/81 coins respectively, and find the difference from 121. This allows us to identify the weight of each coin in each weighing, since no matter what, the first 40 coins (delta between -40 and 40) can't muddle the difference made by the group of 81 (+-81 or 0), and same to the left.
+
+## 2.7 Modular arithmetic
+
+### Prisoner problem
+
+We know that at least one will die, as the first person to guess will not have any information. Then, to save others, he must share some information that allows the all other prisoners to deduce their hat colors based on the first bit of information, as well as the correct guesses of the other prisoners before themselves.
+
+Let us take a simple case of 2 (A and B, with B in the back). Obviously, the B tells A his color. 
+
+Case of 3: we want B to say his color knowing the color of A and what C says. We want A to say his color knowing the color of B and what C says. What is the way to do this with the binary nature of C? Well, assign one color 0 and one color 1, then have C say the color A XOR B. B and A both have sufficient information to answer if they go from back to front.
+
+Case of 100: you can save **99** by expanding on this idea.
+
+### Division by 9
+
+Division rules say divisible by 9 if the sum of the digits is divisible by 9. We know *10^n^ = 1 mod 9* for *n>0*, so the sum of the digits mod 9 is the same as the number itself mod 9. Case closed.
+
+### Chameleon Colors
+
+With the yes/no nature and state changes, we should immediately try to find an invariant. Easiest one is if red = 0, green = 1, blue = 2, and invariant is sum mod 3. If red meets green, 0 + 1 = 2 + 2 mod 3. If red meets blue, 0 + 2 = 1 + 1 mod 3. Same with G/B. The current state is 15 + 2 * 17 = 1 mod 3. When all 45 chameleons are the same color, their sum is 0 mod 3. Thus, this is **impossible**.
+
