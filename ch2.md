@@ -151,3 +151,24 @@ There is no way to solve this in better than *O(n)* time, so I will assume the s
 
 Let us take the sum of all the numbers = *5050-a-b*. This allows us to determine *c=a+b*. Let us take the product and identify *p=ab*. Then, *c^2^-4p=(a-b)^2^=K^2*, which gives us *K=a-b* or *K=b-a*. Solving gives us two pairs which are identical, but reversed - this is the solution
 
+## Series summation
+
+### Clock Pieces
+
+Three pieces, equal sums. We know the numbers on the clock sum to 12*13/2 = 78. Then, each part must sum to 26. We also know that at least two pieces must contain contiguous numbers, as it is impossible to break a clock into only 3 pieces otherwise. Consecutive sums to 26: **11-12-1-2, 5-6-7-8**. Last piece is **9-10-3-4**.
+
+### Missing Integers
+
+There is no way to solve this in better than *O(n)* time, so I will assume the solution wants *O(1)* additional space. Let the missing numbers be *a, b*. Since we are operating in constant space, we must accumulate the numbers somehow. A system of two equations allows us to identify two variables from two results. 
+
+Let us take the sum of all the numbers = *5050-a-b*. This allows us to determine *c=a+b*. Let us take the product and identify *p=ab*. Then, *c^2^-4p=(a-b)^2^=K^2*, which gives us *K=a-b* or *K=b-a*. Solving gives us two pairs which are identical, but reversed - this is the solution.
+
+### Counterfeit Coins
+
+We must determine a way to weigh only once and differentiate every bag. This is only possible if we add a different number of coins from each bag, as if we add X coins from two different bags, the weighing result can not differentiate. Then, if we add 1 coin from one bag, etc. we can only differentiate the 1-coin bag and the 3-coin bag as the outlier if there is no mixing of 9s and 11s in the outlier bag, but once we are there we find the absolute difference of (1 + 2... 10)*10 = 550 from the weight, which indicates the bag.
+
+### Glass Balls
+
+We only have two balls, and want to find the floor. Suppose the first toss is at floor M_0, and it breaks. Then, we must start throwing from 1 upwards to M_0 to ensure we don't break before the solution is found, which has a worst case of M_0 throws.
+
+Suppose the first throw doesn't break. Then, we choose some M_1>M_0 to try, and if it breaks, takes M_1-M_0+1 throws. In order to minimize worst case throws, let M_1-M_0+1=M_0 -> M_1 = 2M_0-1. If doesn't break, continue with M_2=3M_0-2-1... We want to ensure that M_(M_0)- M(M_0-1) + M_0 = M_0 and that M_(M_0) >= 100, implying that M_(M_0) = M(M_0-1) (which is true by examining the summations). We know M_(M_0) = (M_0 + 1)M_0 - (1 + 2 + ... + M_0) = (M_0 + 1)M_0/2, for which the minimum solution is M_0=14.
