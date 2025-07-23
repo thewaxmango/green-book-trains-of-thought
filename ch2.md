@@ -197,3 +197,5 @@ Suppose there exist >=6 edges. Then, by pigeonhole principle, there must exist s
 Then, 5 edges is the only case. It must be connected, as a lone node can form an empty triangle by pigeonhole principle (5/6 to connect 4 nodes). It can not have a loop of 3 (trivial) or a loop of 4 (the extra node can form an empty triangle with the diagonal of a square it is not adjacent to a node of). Thus, the graph of 5 nodes must be a ring. 
 
 When we add the 6th node, it must connect to at least 3 nodes - otherwise, there exists a diagonal of the ring such that with the 6th node, it forms a empty triangle. However, with three edges, by pigeonhole it once again must form a complete triangle. Thus, this is impossible, so a graph with 6 nodes must contain either an empty triangle or a complete one.
+
+*Upon review:* The solution is a lot simpler.
