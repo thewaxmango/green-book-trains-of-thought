@@ -26,14 +26,14 @@ We count how many combinations of hands that fit the criteria someone may get an
 
 Total combinations: 52C5 = 52!/(5!47!). For all following criteria, the probability is the number of combinations found divided by 52C5. We leave products unsimplified as the actual result is not necessary for understanding the problem as long as the value is correct.
 
-4 of a kind: we choose one suit for the 4 of a kind, and one extra card -> 13C1 * 48C1 = 13*48. 
+4 of a kind: we choose one suit for the 4 of a kind, and one extra card -> 13C1 \* 48C1 = **13\*48**. 
 
-Full house: we choose one suit for the 3, one suit for the 2, and the specific cards in each suit -> 13C1 \* 12C1 \* 4C3 \* 4C2 = 13 \* 12 \* 4 \* 6.
+Full house: we choose one suit for the 3, one suit for the 2, and the specific cards in each suit -> 13C1 \* 12C1 \* 4C3 \* 4C2 = **13 \* 12 \* 4 \* 6**.
 
-Two pair: we choose two suits for pairs, one extra card, and the specific cards in each suit -> 13C2 \* 44C1 \* 4C2 \* 4C2 = (13 \* 6) \* 44 \* 6 \* 6.
+Two pair: we choose two suits for pairs, one extra card, and the specific cards in each suit -> 13C2 \* 44C1 \* 4C2 \* 4C2 = **(13 \* 6) \* 44 \* 6 \* 6**.
 
 ### Hopping Rabbit
 
-To determine the number of ways the rabbit gets to the *n* th step, it is the sum of ways to get to the *(n-1)* th step and the ways to get to the *(n-2)* th step. We know the number of ways to get to the zeroth step is 1, and the first step is 1. F(2) = 2, F(3) = F(1) + F(2) = 3... This is the Fibonacci sequence, and for the *n* th step, you take the *n+1* th element.
+To determine the number of ways the rabbit gets to the *n* th step, it is the sum of ways to get to the *(n-1)* th step and the ways to get to the *(n-2)* th step. We know the number of ways to get to the zeroth step is 1, and the first step is 1. F(2) = 2, F(3) = F(1) + F(2) = 3... This is the Fibonacci sequence, and for the *n* th step, you take the ***n+1* th Fibonacci number**.
 
 
