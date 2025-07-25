@@ -14,4 +14,8 @@ Finding *t* is simple - the probability that you tie is the same as the probabil
 
 First, we try and model a situation. Suppose the first person A chooses a random seat B. Then, no matter how many people between A and B come in, only A will be out of place in B, and seat A is empty. When B comes in, there is a 1/X (depending on how many people came in) that he sits in A's seat, otherwise there will still only technically be one out of place (when you hide the actual people and only consider what seats should have been filled). So when it comes your turn, either seat A is empty or your seat is empty. Furthermore, to all the other passengers, seat A and your seat are symmetric, including person A! Thus, the probability you get your seat is **1/2**.
 
+### N Points on a Circle
 
+Suppose WLOG that the point on the clockwise side of the largest gap is point 1. Then, to all fit on a semicircle, all other N-1 points must be on the next semicircle clockwise from point 1, which has probability over all N possible gap-clockwise points  **0.5^N-1^N**. 
+
+## 4.1 Combinatorial analysis
