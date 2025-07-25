@@ -1,4 +1,4 @@
-## 4.1 ~
+## 4.1 Basic probability definitions and set operations
 
 ### Coin Toss Game
 
