@@ -18,4 +18,4 @@ First, we try and model a situation. Suppose the first person A chooses a random
 
 Suppose WLOG that the point on the clockwise side of the largest gap is point 1. Then, to all fit on a semicircle, all other N-1 points must be on the next semicircle clockwise from point 1, which has probability over all N possible gap-clockwise points  **0.5^N-1^N**. 
 
-## 4.1 Combinatorial analysis
+## 4.2 Combinatorial analysis
