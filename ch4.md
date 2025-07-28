@@ -40,3 +40,12 @@ To determine the number of ways the rabbit gets to the *n* th step, it is the su
 
 Basically, we want to ensure that for every group of 5 pirates, there is at least one lock they can not open, but those locks are all openable by any 6th pirate. The minimum for this is that there exists exactly one such lock for every group of 5 pirates, and these locks can not overlap (which would be a contradiction when accounting for the any 6th pirate rule). Thus, we need at least **11C5** locks, and by our previous rules each lock must be openable by 6 distinct pirates, totaling 11!\*6/(6!5!) keys. Furthermore, every pirate must be able to open the last lock of every *other* group of 5 pirates. Thus, each pirate needs at least **10C5** keys, totaling 11\*10!/(5!5!) keys.
 
+### Chess Tournament
+
+Players 1 and 2 would never lose to any other player. Therefore, the chance that they meet in the final is the chance that they never get assigned to each other beforehand, which for first round is (2^n^-2)/(2^n^-1), the second round is (2^n-1^-2)/(2^n-1^-1), etc. In the semifinals, the odds are (2^2^-2)/(2^2^-1). This product can be telescoped out and simplified to **2^n-1^/(2^n^-1)**.
+
+### Application Letters
+
+This is the classic example of derangements, or arrangements where no element is in the correct place. Let this function be defined as *D(n)* for n elements. We know trivially *D(2) = 1*, and by simple observation that *D(3) = 2* as that is the number of cyclically distinct permutations of 3 elements (of which then we cycle once to find the derangement).
+
+We want to know *D(5)*/5!. Fortunately, we can consider all cycles - either all 5 elements are in a cycle, or they are split 2/3. 1/4 is not possible as you can not have a derangement of one element. For 2/3, there are 5C2 \* D(2) * D(3) = 20 ways to get a derangement. For 5, there are 5!/5 = 24 cyclically distinct permutations. Thus, the probability of getting a derangement is 44/5! = **11/30**.
