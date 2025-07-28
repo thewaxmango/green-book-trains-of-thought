@@ -36,4 +36,7 @@ Two pair: we choose two suits for pairs, one extra card, and the specific cards 
 
 To determine the number of ways the rabbit gets to the *n* th step, it is the sum of ways to get to the *(n-1)* th step and the ways to get to the *(n-2)* th step. We know the number of ways to get to the zeroth step is 1, and the first step is 1. F(2) = 2, F(3) = F(1) + F(2) = 3... This is the Fibonacci sequence, and for the *n* th step, you take the ***n+1* th Fibonacci number**.
 
+### Screwy Pirates 2
+
+Basically, we want to ensure that for every group of 5 pirates, there is at least one lock they can not open, but those locks are all openable by any 6th pirate. The minimum for this is that there exists exactly one such lock for every group of 5 pirates, and these locks can not overlap (which would be a contradiction when accounting for the any 6th pirate rule). Thus, we need at least **11C5** locks, and by our previous rules each lock must be openable by 6 distinct pirates, totaling 11!\*6/(6!5!) keys. Furthermore, every pirate must be able to open the last lock of every *other* group of 5 pirates. Thus, each pirate needs at least **10C5** keys, totaling 11\*10!/(5!5!) keys.
 
