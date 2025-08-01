@@ -49,3 +49,15 @@ Players 1 and 2 would never lose to any other player. Therefore, the chance that
 This is the classic example of derangements, or arrangements where no element is in the correct place. Let this function be defined as *D(n)* for n elements. We know trivially *D(2) = 1*, and by simple observation that *D(3) = 2* as that is the number of cyclically distinct permutations of 3 elements (of which then we cycle once to find the derangement).
 
 We want to know *D(5)*/5!. Fortunately, we can consider all cycles - either all 5 elements are in a cycle, or they are split 2/3. 1/4 is not possible as you can not have a derangement of one element. For 2/3, there are 5C2 \* D(2) * D(3) = 20 ways to get a derangement. For 5, there are 5!/5 = 24 cyclically distinct permutations. Thus, the probability of getting a derangement is 44/5! = **11/30**.
+
+### Birthday Problem
+
+Let us find the probability that no two people of *n* share a birthday. Then, the probability that this is true is 1 \* (364/365) \* (363/365) \* ... \* (366-n/365). I will not bother to find the actual solution - we just want the smallest *n* such that this is less than 0.5.
+
+### 100th Digit
+
+Revisit later...
+
+### Cubic of integer
+
+We only care about the last 2 digits, which we will call *x*. We require*x^3^ = 11 mod 100*. Taking mod 10, we know *x = 1 mod 10*. Taking mod 4, we know *x = 3 mod 4*. This already restricts us to 11, 31, 51, 71, and 91, which we just check the cubes of. Only 71 works, so any number ending in 71 will work, which is **1%** for all numbers between 1 and 10^12^.
